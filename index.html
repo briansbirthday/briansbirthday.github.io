@@ -1,12 +1,63 @@
 <title>Brian's Birthday</title>
-<body>
-<div class="row">
-  <div class="one-thirds column" id="text">
-    <h1 class="showtext"></h1>
-  </div>
 
-  <div id="foot">
-    Hey
-  </div>
-</div>
-<body>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    $(function() {
+
+      var showText = ["Brian's birthday is:", "August 14, 1997"];
+
+      var
+        showNum = 0,
+        $showText = $('.showtext');
+
+      function doShow() {
+        $showText.text(showText[showNum]);
+        $showText.fadeIn(1800, function() {
+          $showText.fadeOut(1800, function() {
+            //lets make it so it wraps back to the start
+            showNum = (showNum + 1) % showText.length;
+            doShow();
+          });
+        });
+
+      }
+
+      doShow();
+    });
+
+  </script>
+  <style>
+  body { background: #ffffff;}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center
+}
+
+#foot {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  text-align: center
+}
+
+#h1 { color: #283032};
+
+  </style>
+  <body>
+    <div class="row">
+      <div class="one-thirds column" id="text">
+        <h1 class="showtext"></h1>
+      </div>
+
+      <div id="foot">
+        Hey
+      </div>
+    </div>
+
+    <body>
