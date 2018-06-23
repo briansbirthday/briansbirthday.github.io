@@ -3,29 +3,8 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script> $(function() {
+   <script src="/fade.js"></script>
 
-      var showText = ["Brian's birthday is:", "August 14, 1997"];
-
-      var
-        showNum = 0,
-        $showText = $('.showtext');
-
-      function doShow() {
-        $showText.text(showText[showNum]);
-        $showText.fadeIn(1800, function() {
-          $showText.fadeOut(1800, function() {
-            //lets make it so it wraps back to the start
-            showNum = (showNum + 1) % showText.length;
-            doShow();
-          });
-        });
-
-      }
-
-      doShow();
-    });
-  </script>
   <style>
   body { background: #ffffff;}
 
@@ -40,7 +19,7 @@
 #foot {
   position: absolute;
   top: 100%;
-  left: 0%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center
 }
